@@ -83,11 +83,11 @@ const Error = styled.div`
 `;
 
 const Form = styled.form`
+border: solid red;
   margin: 0 auto;
   padding: 60px 60px 30px;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid ${COLORS.matte_blue};
 `;
 
 const Characters = styled.div`

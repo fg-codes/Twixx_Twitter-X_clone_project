@@ -35,7 +35,6 @@ const Content = styled.div`
   flex-direction: column;
   gap: 15px;
   width: fit-content;
-  padding-block: 2vw;
 `;
 const Logo = styled.img`
   width: 80%;
