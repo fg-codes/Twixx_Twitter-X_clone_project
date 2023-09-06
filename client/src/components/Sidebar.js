@@ -24,7 +24,8 @@ export const Sidebar = () => {
 const Wrapper = styled.div`
   position: relative;
   border-right: 1px solid ${COLORS.matte_blue};
-  min-height: 100vh; 
+  min-height: 100vh;
+  width: var(--sidebar_width);
 `;
 
 const Content = styled.div`

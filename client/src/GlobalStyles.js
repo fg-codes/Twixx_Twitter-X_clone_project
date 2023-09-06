@@ -17,10 +17,9 @@ export const GlobalStyle = createGlobalStyle`
 */
 
 :root {
-	--max_width: 90vw;
-	--sidebar_width: 240px;
-	font-family: 'Poppins', sans-serif;
+	--sidebar_width: 20vw;
 }
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -48,14 +47,14 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	max-width: var(--max_width);
 	margin: 0 auto;
-  font-family: "Poppins", sans-serif;
 	background: ${COLORS.background};
 	border-left: 1px solid ${COLORS.matte_blue};
 	border-right: 1px solid ${COLORS.matte_blue};
 	color: ${COLORS.dark_gray};
 	min-height: 100vh;
+	width: 90vw;
+	font-family: 'Poppins', sans-serif;
 }
 ol, ul {
 	list-style: none;

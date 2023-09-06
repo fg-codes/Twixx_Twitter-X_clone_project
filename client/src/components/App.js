@@ -41,7 +41,7 @@ const App = () => {
 export default App;
 
 const Content = styled.div`
-  width: 100%;
+  flex: 1;
 `;
 
 const Container = styled.div`
