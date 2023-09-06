@@ -55,14 +55,14 @@ const StyledLink = styled(NavLink)`
   padding: 10px 16px;
   border-radius: 50px;
   transition: all 200ms ease-in-out;
-  color: ${COLORS.dark_gray};
+  color: ${COLORS.primary_blue};
   &:hover {
     background-color: ${COLORS.matte_blue};
     color: ${COLORS.background};
     font-weight: 500;
   }
   &.active {
-    color: ${COLORS.red};
+    color: ${COLORS.primary_blue};
   }
   &.active:hover {
     color: ${COLORS.background};

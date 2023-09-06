@@ -18,8 +18,8 @@ const TabButton = styled.button`
   font-weight: 600;
   font-size: 1.1rem;
   background-color: transparent;
-  color: ${props => props.checked ? COLORS.red : COLORS.dark_gray};
-  border-bottom: 3px solid ${props => props.checked ? COLORS.red : 'transparent'};
+  color: ${props => props.checked ? COLORS.primary_blue : COLORS.primary_blue};
+  border-bottom: 3px solid ${props => props.checked ? COLORS.primary_blue : 'transparent'};
   transition: all 200ms ease-in-out;
   &:hover {
     cursor: pointer;

@@ -43,7 +43,7 @@ export const TweetDetails = () => {
 const Span = styled.span`
   text-decoration: none;
   transition: all 200ms ease-in-out;
-  color: ${COLORS.dark_gray};
+  color: ${COLORS.primary_blue};
   &:hover {
     color: ${COLORS.matte_blue};
   }

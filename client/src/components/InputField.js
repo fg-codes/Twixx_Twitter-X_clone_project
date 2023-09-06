@@ -5,7 +5,7 @@ import { FaSadCry } from "react-icons/fa";
 import { LoadingSmall } from "./utils/Loading";
 
 export const InputField = ({ reload, setReload }) => {
-  const initialColor = COLORS.matte_blue;
+  const initialColor = COLORS.primary_blue;
   const [color, setColor] = useState(initialColor);
   const [textarea, setTextarea] = useState('');
   const [error, setError] = useState(false);
@@ -44,13 +44,13 @@ export const InputField = ({ reload, setReload }) => {
     color && (
       <Form onSubmit={handleSubmit}>
         <Textarea
-          placeholder={"What's uppP?????6"}
+          placeholder={"What's up?"}
           value={textarea}
           onChange={handleChange}
         ></Textarea>
         <FormHandles>
           <Characters color={color}>{!textarea ? 280 : 280 - textarea.length}</Characters>
-          <Button type="submit" disabled={color === COLORS.red || !textarea}>{loading ? <LoadingSmall /> : 'Moew'}</Button>
+          <Button type="submit" disabled={color === COLORS.red || !textarea}>{loading ? <LoadingSmall /> : 'Publish'}</Button>
         </FormHandles>
         {error && (
           <Error>
@@ -102,7 +102,7 @@ const Textarea = styled.textarea`
   line-height: 22px;
   font-size: 16px;
   border-radius: 5px;
-  color: ${COLORS.dark_gray};
+  color: ${COLORS.primary_blue};
 `;
 
 const Button = styled.button`
@@ -114,10 +114,10 @@ const Button = styled.button`
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  color: ${COLORS.dark_gray};
+  color: ${COLORS.primary_blue};
   border-radius: 5px;
-  background-color: ${COLORS.beige};
-  border: 1px solid ${COLORS.beige};
+  // background-color: ${COLORS.secondary};
+  // border: 1px solid ${COLORS.secondary};
   transition: all 200ms ease-in-out;
   &:hover {
     cursor: pointer;

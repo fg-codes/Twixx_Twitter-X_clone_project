@@ -95,7 +95,7 @@ const Placer = styled.div`
 
 const Bold = styled.span`
   font-weight: bold;
-  color: ${COLORS.dark_gray}
+  color: ${COLORS.primary_blue}
 `;
 const Bio = styled.p`
   padding: 20px 20vw 20px 40px;

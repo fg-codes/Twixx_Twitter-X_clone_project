@@ -1,10 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const COLORS = {
-	beige: '#E1D4BB',
-	matte_blue: '#537188',
-	dark_gray: '#343a40',
-	background: '#EEEEEE',
+	background: '#18191A',
+	card: '#242526',
+	hover: '#3A3B3C',
+	primary_blue: '#1DA1F2',
+	primary_text: '#E4E6EB',
+	secondary_text: '#B1B3B7',
 	yellow: '#CBB279',
 	red: '#9a031e'
 }
@@ -51,7 +53,7 @@ body {
 	background: ${COLORS.background};
 	border-left: 1px solid ${COLORS.matte_blue};
 	border-right: 1px solid ${COLORS.matte_blue};
-	color: ${COLORS.dark_gray};
+	color: ${COLORS.primary_blue};
 	min-height: 100vh;
 	width: 90vw;
 	font-family: 'Poppins', sans-serif;

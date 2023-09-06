@@ -24,5 +24,5 @@ const StyledFaSadCry = styled(FaSadCry)`
 const H1 = styled.h1`
   font-size: 45px;
   margin: 20px;
-  color: ${COLORS.red};
+  color: ${COLORS.primary_blue};
 `;
