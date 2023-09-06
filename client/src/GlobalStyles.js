@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import "@fontsource/poppins";
 
 export const COLORS = {
 	beige: '#E1D4BB',
@@ -20,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
 :root {
 	--max_width: 90vw;
 	--sidebar_width: 240px;
+	font-family: 'Poppins', sans-serif;
 }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
