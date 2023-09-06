@@ -1,10 +1,12 @@
 import { styled } from "styled-components";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CurrentUserContext } from "./CurrentUserContext";
 import { COLORS } from "../GlobalStyles";
 import { FaSadCry } from "react-icons/fa";
 import { LoadingSmall } from "./utils/Loading";
 
 export const InputField = ({ reload, setReload }) => {
+  const currentUser = useContext(CurrentUserContext);
   const initialColor = COLORS.primary_blue;
   const [color, setColor] = useState(initialColor);
   const [textarea, setTextarea] = useState('');
@@ -44,7 +46,7 @@ export const InputField = ({ reload, setReload }) => {
     color && (
       <Form onSubmit={handleSubmit}>
         <Textarea
-          placeholder={"What's up?"}
+          placeholder={`What's on your mind, ${currentUser.currentuser.displayName}?`}
           value={textarea}
           onChange={handleChange}
         ></Textarea>
@@ -83,9 +85,10 @@ const Error = styled.div`
 `;
 
 const Form = styled.form`
-border: solid red;
+  background-color: ${COLORS.card};
+  border-radius: 5px;
   margin: 0 auto;
-  padding: 60px 60px 30px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
 `;
@@ -98,36 +101,36 @@ const Characters = styled.div`
 const Textarea = styled.textarea`
   height: 75px;
   padding: 15px;
+  resize: none;
   font-family: "Poppins", sans-serif;
+  background-color: ${COLORS.hover};
+  color: ${COLORS.secondary_text};
+  border: none;
+  outline: none;
   line-height: 22px;
   font-size: 16px;
   border-radius: 5px;
-  color: ${COLORS.primary_blue};
+  &::placeholder {
+    font-style: italic;
+  }
 `;
 
 const Button = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  height: 40px;
+  padding: 5px 30px;
+  font-size: 16px;
+  border: none;
+  outline: none;
   font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: ${COLORS.primary_blue};
   border-radius: 5px;
-  // background-color: ${COLORS.secondary};
-  // border: 1px solid ${COLORS.secondary};
   transition: all 200ms ease-in-out;
+  color: ${COLORS.primary_text};
+  background-color: ${COLORS.primary_blue};
   &:hover {
     cursor: pointer;
-    background-color: ${COLORS.matte_blue};
-    color: ${COLORS.background};
   }
   &:disabled {
-    background-color: ${COLORS.background};
-    border: 1px solid lightgray;
-    color: lightgray;
+    color: revert;
+    background-color: revert;
     cursor: default;
   }
 `;
