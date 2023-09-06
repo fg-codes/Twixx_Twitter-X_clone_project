@@ -1,7 +1,7 @@
 const data = require('../data');
 
 // HARDCODED CURRENT USER.
-const CURRENT_USER_HANDLE = 'treasurymog';
+const CURRENT_USER_HANDLE = 'JohnDoe';
 
 const MAX_DELAY = 2000;
 const FAILURE_ODDS = 0.05;
@@ -28,7 +28,7 @@ const simulateProblems = (res, data) => {
 };
 
 const getUser = handle => {
-  return data.users[handle.toLowerCase()];
+  return data.users[handle];
 };
 const getUserProfile = handle => {
   const user = getUser(handle);
@@ -93,7 +93,7 @@ const denormalizeTweet = tweet => {
 
 const getTweetsFromUser = userId => {
   return Object.values(data.tweets)
-    .filter(tweet => tweet.authorHandle.toLowerCase() === userId.toLowerCase())
+    .filter(tweet => tweet.authorHandle === userId)
     .map(resolveRetweet)
     .map(denormalizeTweet);
 };
@@ -122,8 +122,8 @@ const getTweetsForUser = userId => {
   return Object.values(data.tweets)
     .filter(
       tweet =>
-        user.followingIds.includes(tweet.authorHandle.toLowerCase()) ||
-        tweet.authorHandle.toLowerCase() === CURRENT_USER_HANDLE.toLowerCase()
+        user.followingIds.includes(tweet.authorHandle) ||
+        tweet.authorHandle === CURRENT_USER_HANDLE
     )
     .reduce(duplicateTweetReducer, [])
     .map(resolveRetweet)

@@ -1,293 +1,295 @@
 const users = {
-  diplomog: {
-    handle: "diplomog",
-    displayName: "Palmerston",
-    avatarSrc: "/assets/diplomog-avatar.jpg",
-    bannerSrc: "/assets/diplomog-banner.jpeg",
-    location: "Whitehall",
-    url: "http://fco.gov.uk",
-    joined: "2016-02-02T12:00",
-    bio: "Best friends with @treasurymog.",
-    followingIds: ["treasurymog"],
-    followerIds: ["treasurymog"],
+  JohnDoe: {
+    handle: "JohnDoe",
+    displayName: "John Doe",
+    avatarSrc: "/assets/avatar-JohnDoe.jpg",
+    bannerSrc: "/assets/banner-JohnDoe.jpeg",
+    location: "Toronto, Canada",
+    url: "https://www.johndoe.com",
+    joined: "2022-02-02T12:00",
+    bio: "Aspiring writer with a passion for technology. 📚🖥️ Exploring the fusion of storytelling and tech's endless possibilities.",
+    followingIds: ["AliceSmith", "TechGuru123", "FoodieLover", "TravelExplorer"],
+    followerIds: ["AliceSmith", "FoodieLover"],
     likeIds: ["1212689921057665024"],
   },
-  treasurymog: {
-    handle: "treasurymog",
-    displayName: "Gladstone, Esq.",
-    avatarSrc: "/assets/treasurymog-avatar.jpg",
-    bannerSrc: "/assets/treasurymog-banner.jpeg",
-    location: "Whitehall, London",
-    url: undefined,
-    joined: "2016-10-12T12:00",
-    bio:
-      "I live and work at the Treasury as a mouser but I also have a paw in the finances. Here to help lighten up the political world. Unofficial.",
-    followingIds: ["diplomog", "giantcat9"],
-    followerIds: ["diplomog", "giantcat9"],
+
+  AliceSmith: {
+    handle: "AliceSmith",
+    displayName: "Alice Smith",
+    avatarSrc: "/assets/avatar-AliceSmith.jpg",
+    bannerSrc: "/assets/banner-AliceSmith.jpeg",
+    location: "Los Angeles, USA",
+    url: "https://www.alicesmithblog.com",
+    joined: "2022-03-03T12:00",
+    bio: "Nature lover and adventurer. 🌿🌄",
+    followingIds: ["JohnDoe", "TechGuru123", "FitnessFanatic"],
+    followerIds: ["JohnDoe", "TechGuru123", "TravelExplorer", "FoodieLover"],
     likeIds: ["1209791721099411456"],
   },
-  giantcat9: {
-    handle: "giantcat9",
-    displayName: "Giant Military Cats",
-    avatarSrc: "/assets/militarycats-avatar.jpg",
-    bannerSrc: "/assets/militarycats-banner.jpg",
-    location: undefined,
-    url: undefined,
-    joined: "2019-09-01T18:00",
-    bio:
-      "Just giant cats with military hardware. \nInstagram: @giantmilitarycats",
-    followingIds: ["treasurymog"],
-    followerIds: ["treasurymog"],
+
+  TechGuru123: {
+    handle: "TechGuru123",
+    displayName: "Tech Guru 2000",
+    avatarSrc: "/assets/avatar-TechGuru123.jpg",
+    bannerSrc: "/assets/banner-TechGuru123.jpeg",
+    location: "Tokyo, Japan",
+    url: "https://www.techgurureviews.com",
+    joined: "2022-04-04T18:00",
+    bio: "Sharing the latest in tech trends and gadgets. 💻📱",
+    followingIds: ["AliceSmith", "FoodieLover", "TravelExplorer", "FitnessFanatic"],
+    followerIds: ["JohnDoe", "AliceSmith"],
+    likeIds: [],
+  },
+
+  FoodieLover: {
+    handle: "FoodieLover",
+    displayName: "Maddie aka Foodie Lover",
+    avatarSrc: "/assets/avatar-FoodieLover.jpg",
+    bannerSrc: "/assets/banner-FoodieLover.jpeg",
+    location: "Nashville, USA",
+    url: "https://www.foodieadventures.com",
+    joined: "2022-05-05T18:00",
+    bio: "Exploring the world one meal at a time. 🍔🍕",
+    followingIds: ["JohnDoe", "TravelExplorer", "FitnessFanatic", "FoodieLover"],
+    followerIds: ["JohnDoe", "TechGuru123", "TravelExplorer"],
+    likeIds: [],
+  },
+
+  TravelExplorer: {
+    handle: "TravelExplorer",
+    displayName: "Travel Explorer",
+    avatarSrc: "/assets/avatar-TravelExplorer.jpg",
+    bannerSrc: "/assets/banner-TravelExplorer.jpeg",
+    location: "Sydney, Australia",
+    url: "https://www.traveltheworldwithme.com",
+    joined: "2022-06-06T18:00",
+    bio: "Roaming the globe and sharing travel tales. 🌍✈️",
+    followingIds: ["AliceSmith", "FoodieLover", "FitnessFanatic"],
+    followerIds: ["JohnDoe", "TechGuru123", "FoodieLover", "FitnessFanatic"],
+    likeIds: [],
+  },
+
+  FitnessFanatic: {
+    handle: "FitnessFanatic",
+    displayName: "Fitness Fanatic",
+    avatarSrc: "/assets/avatar-FitnessFanatic.jpg",
+    bannerSrc: "/assets/banner-FitnessFanatic.png",
+    location: "San Francisco, USA",
+    url: "https://www.fitnessjourney.com",
+    joined: "2022-07-07T18:00",
+    bio: "Living a healthy and active lifestyle. 💪🏋️",
+    followingIds: ["TravelExplorer"],
+    followerIds: ["AliceSmith", "TechGuru123", "FoodieLover", "TravelExplorer"],
     likeIds: [],
   },
 };
 
 const tweets = {
-  // TreasuryMog
-  "1209791721099411456r1": {
-    id: "1209791721099411456r1",
-    authorHandle: "treasurymog",
-    timestamp: "2020-01-19T09:14:00+00:00",
-    sortedTimestamp: "2020-01-19T09:14:00+00:00",
-    retweetOf: "1209791721099411456",
-    likedBy: [],
+  // JohnDoe
+  "9325965937879404": {
+    id: "9325965937879404",
+    authorHandle: "JohnDoe",
+    timestamp: "2022-03-13T09:14:00+00:00",
+    sortedTimestamp: "2022-03-13T09:14:00+00:00",
+    likedBy: ["FoodieLover"],
     retweetedBy: [],
+    status:
+      "C.S. Lewis's Chronicles of Narnia whisked me away to a magical world, filled with unforgettable adventures and cherished characters.It was an enchanting reading journey that I'll always hold close to my heart. 📚✨ #NarniaMagic",
+    media: [
+      {
+        type: "img",
+        url: "/assets/9325965937879404.jpeg",
+      },
+    ],
   },
-  "1212689921057665024": {
-    id: "1212689921057665024",
-    authorHandle: "treasurymog",
-    timestamp: "2020-01-12T09:14:00+00:00",
-    sortedTimestamp: "2020-01-12T09:14:00+00:00",
+  "6449055778308144": {
+    id: "6449055778308144",
+    authorHandle: "JohnDoe",
+    timestamp: "2022-03-14T09:14:00+00:00",
+    sortedTimestamp: "2022-03-14T09:14:00+00:00",
     likedBy: [],
     retweetedBy: [],
     status:
-      "Ok people #backtowork you go. Cats...just carry on lounging around as usual.",
-    media: [
-      {
-        type: "img",
-        url: "/assets/ENRXDPKWwAEJqFu.jpeg",
-      },
-    ],
+      "I loved my time at the reader group meeting, and meeting Alexander Radulov was an unexpected delight. A perfect blend of literature and sports!",
+    media: [],
+  },
+  "8192327576064052r1": {
+    id: "8192327576064052r1",
+    authorHandle: "JohnDoe",
+    timestamp: "2023-02-20T09:14:00+00:00",
+    sortedTimestamp: "2023-02-20T09:14:00+00:00",
+    retweetOf: "8192327576064052",
+    likedBy: [],
+    retweetedBy: [],
   },
 
-  // Diplomog
-  "1209791721099411456": {
-    id: "1209791721099411456",
-    authorHandle: "diplomog",
-    timestamp: "2019-12-26T14:38:00+00:00",
-    sortedTimestamp: "2019-12-26T14:38:00+00:00",
-    likedBy: [],
-    retweetedBy: ["treasurymog"],
+  // AliceSmith
+  "3911391382148489": {
+    id: "3911391382148489",
+    authorHandle: "AliceSmith",
+    timestamp: "2022-04-14T09:14:00+00:00",
+    sortedTimestamp: "2022-04-14T09:14:00+00:00",
+    likedBy: ["TechGuru123", "TravelExplorer"],
+    retweetedBy: ["TravelExplorer"],
     status:
-      "If you're a 🇬🇧 diplomat abroad today, let me know where you are and what you're up to!",
+      "I embarked on a two-night trek through the stunning Chinese mountains, immersing myself in rugged terrain and breathtaking scenery. It was an adventure that truly touched my heart! ❤️❤️",
+    media: [
+      {
+        type: "img",
+        url: "/assets/3911391382148489.jpeg",
+      },
+    ],
+  },
+  "8192327576064052": {
+    id: "8192327576064052",
+    authorHandle: "AliceSmith",
+    timestamp: "2022-04-15T09:14:00+00:00",
+    sortedTimestamp: "2022-04-15T09:14:00+00:00",
+    likedBy: ["JohnDoe"],
+    retweetedBy: ["JohnDoe", "FoodieLover"],
+    status:
+      "At Rachel Claire boutique, I stumbled upon an exquisite collection of bath products and perfume, each a fragrant masterpiece. It was a delightful discovery.",
     media: [],
   },
 
-  "1215324598067245056r2": {
-    id: "1215324598067245056r2",
-    authorHandle: "diplomog",
-    timestamp: "2020-01-19T09:14:00+00:00",
-    sortedTimestamp: "2020-01-19T09:14:00+00:00",
-    retweetOf: "1215324598067245056",
+  // TechGuru123
+  "6710219229755186": {
+    id: "6710219229755186",
+    authorHandle: "TechGuru123",
+    timestamp: "2022-05-15T09:14:00+00:00",
+    sortedTimestamp: "2022-05-15T09:14:00+00:00",
+    likedBy: ["JohnDoe"],
+    retweetedBy: [],
+    status:
+      "Spent an awesome day playing around with my new toy: a drone! 🚁 So much fun capturing the world from a whole new perspective!",
+    media: [
+      {
+        type: "img",
+        url: "/assets/6710219229755186.png",
+      },
+    ],
+  },
+  "6661005865559667r1": {
+    id: "6661005865559667r1",
+    authorHandle: "TechGuru123",
+    timestamp: "2023-03-13T09:14:00+00:00",
+    sortedTimestamp: "2023-03-13T09:14:00+00:00",
+    retweetOf: "6661005865559667",
     likedBy: [],
     retweetedBy: [],
   },
 
-  "1214624813723136002": {
-    id: "1214624813723136002",
-    authorHandle: "diplomog",
-    timestamp: "2020-01-12T04:31:00+00:00",
-    sortedTimestamp: "2020-01-12T04:31:00+00:00",
+  // FoodieLover
+  "2392375331521837": {
+    id: "2392375331521837",
+    authorHandle: "FoodieLover",
+    timestamp: "2022-06-16T09:14:00+00:00",
+    sortedTimestamp: "2022-06-16T09:14:00+00:00",
     likedBy: [],
     retweetedBy: [],
-    status: `Sometimes I wonder... am I playing with the ribbon or is the ribbon playing with me?
+    status:
+      "Tacos Tuesday fiesta at the Tiki Bar! 🌮🎉",
+    media: [
+      {
+        type: "img",
+        url: "/assets/2392375331521837.jpeg",
+      },
+    ],
+  },
+  "0574698479845977": {
+    id: "0574698479845977",
+    authorHandle: "FoodieLover",
+    timestamp: "2022-07-17T09:14:00+00:00",
+    sortedTimestamp: "2022-07-17T09:14:00+00:00",
+    likedBy: [],
+    retweetedBy: [],
+    status:
+      "Yet so simple but sooo yummy!!",
+    media: [
+      {
+        type: "img",
+        url: "/assets/0574698479845977.png",
+      },
+    ],
+  },
+  "6661005865559667": {
+    id: "6661005865559667",
+    authorHandle: "FoodieLover",
+    timestamp: "2022-08-18T09:14:00+00:00",
+    sortedTimestamp: "2022-08-18T09:14:00+00:00",
+    likedBy: [],
+    retweetedBy: [],
+    status:
+      "🐱🐱🐱",
+    media: [
+      {
+        type: "img",
+        url: "/assets/6661005865559667.png",
+      },
+    ],
+  },
+  "8192327576064052r2": {
+    id: "8192327576064052r2",
+    authorHandle: "FoodieLover",
+    timestamp: "2023-05-15T09:14:00+00:00",
+    sortedTimestamp: "2023-05-15T09:14:00+00:00",
+    retweetOf: "8192327576064052",
+    likedBy: [],
+    retweetedBy: [],
+  },
 
-Maybe a more diplomatic approach will work 🤔`,
+  // TravelExplorer
+  "2577516047780438": {
+    id: "2577516047780438",
+    authorHandle: "TravelExplorer",
+    timestamp: "2022-11-21T09:14:00+00:00",
+    sortedTimestamp: "2022-11-21T09:14:00+00:00",
+    likedBy: [],
+    retweetedBy: ["FitnessFanatic"],
+    status:
+    "My life is a jet-set dream. From exotic destinations to luxury accommodations, I've perfected the art of living life to the fullest. Travel isn't a pastime; it's a statement, and I'm the master of the game. Stay tuned for my next conquest! ✈️🌍🏨 #Jetsetter #LivingLarge",
     media: [
       {
         type: "img",
-        url: "/assets/diplomog-yarn.png",
+        url: "/assets/2577516047780438.jpeg",
       },
     ],
   },
-  "1209788222324256768": {
-    id: "1209788222324256768",
-    authorHandle: "diplomog",
-    timestamp: "2019-12-25T21:53:00+00:00",
-    sortedTimestamp: "2019-12-25T21:53:00+00:00",
+  "3911391382148489r1": {
+    id: "3911391382148489r1",
+    authorHandle: "TravelExplorer",
+    timestamp: "2023-08-11T09:14:00+00:00",
+    sortedTimestamp: "2023-08-11T09:14:00+00:00",
+    retweetOf: "3911391382148489",
     likedBy: [],
     retweetedBy: [],
-    status: `Moggy Christmas to all!
+  },
 
-Special wishes to all my diplomats, far from home at this time of year, serving 🇬🇧 all over the 🌍.`,
-    media: [
-      {
-        type: "img",
-        url: "/assets/EMoH94cXYAAM5Jj.jpeg",
-      },
-    ],
-  },
-  "1212021009320161280": {
-    id: "1212021009320161280",
-    authorHandle: "diplomog",
-    timestamp: "2019-12-30T19:23:00+00:00",
-    sortedTimestamp: "2019-12-30T19:23:00+00:00",
+  // FitnessFanatic
+  "3341929402841045": {
+    id: "3341929402841045",
+    authorHandle: "FitnessFanatic",
+    timestamp: "2022-12-21T09:14:00+00:00",
+    sortedTimestamp: "2022-12-21T09:14:00+00:00",
     likedBy: [],
     retweetedBy: [],
-    status: `2019 has a been a wonderful year, but I definitely deserve some rest!
-
-I would love to know what my 🇬🇧diplomats have been getting up to! What’s been your highlight or biggest achievement of the year?
-
-My highlight has been coming back to work with my very own Palmy HQ 🤩`,
+    status:
+      "My buddy Correy is in the zone, heating up for his CrossFit competition. 🔥💪 Let's see him crush those goals!",
     media: [
       {
         type: "img",
-        url: "/assets/ENH2rRrWwAARmsZ.jpeg",
+        url: "/assets/3341929402841045.png",
       },
-      // {
-      //   type: 'img',
-      //   url: '/assets/ENH2rTvWwAYTqQW.jpeg',
-      // },
-      // {
-      //   type: 'img',
-      //   url: '/assets/ENH2rYeXYAEAIk7.jpeg',
-      // },
     ],
   },
-  // Giant Military Cats
-  "1215337574526525440": {
-    id: "1215337574526525440",
-    authorHandle: "giantcat9",
-    timestamp: "2020-01-09T13:20:00+00:00",
-    sortedTimestamp: "2020-01-09T13:20:00+00:00",
+  "2577516047780438r1": {
+    id: "2577516047780438r1",
+    authorHandle: "FitnessFanatic",
+    timestamp: "2023-09-09T09:14:00+00:00",
+    sortedTimestamp: "2023-09-09T09:14:00+00:00",
+    retweetOf: "2577516047780438",
     likedBy: [],
     retweetedBy: [],
-    status: `Olifant / Rooikat`,
-    media: [
-      {
-        type: "img",
-        url: "/assets/giant-cats.jpg",
-      },
-    ],
-  },
-  "1215324598067245056": {
-    id: "1215324598067245056",
-    authorHandle: "giantcat9",
-    timestamp: "2020-01-06T09:20:00+00:00",
-    sortedTimestamp: "2020-01-06T09:20:00+00:00",
-    likedBy: [],
-    retweetedBy: ["diplomog"],
-    status: `JAS 39 Gripen`,
-    media: [
-      {
-        type: "img",
-        url: "/assets/giant-cat-running.jpg",
-      },
-    ],
-  },
-  "1215288136026284032": {
-    id: "1215288136026284032",
-    authorHandle: "giantcat9",
-    timestamp: "2019-12-24T14:02:00+00:00",
-    sortedTimestamp: "2019-12-24T14:02:00+00:00",
-    likedBy: [],
-    retweetedBy: [],
-    status: `FGS Frankfurt Am Main (A 1412)`,
-    media: [
-      {
-        type: "img",
-        url: "/assets/giant-cat-on-ship.jpg",
-      },
-    ],
-  },
-  "1215286068716736512": {
-    id: "1215286068716736512",
-    authorHandle: "giantcat9",
-    timestamp: "2019-12-29T22:19:00+00:00",
-    sortedTimestamp: "2019-12-29T22:19:00+00:00",
-    likedBy: [],
-    retweetedBy: [],
-    status: `"The principle of giant military cats deterrence states that a country’s possession of giant military cats discourages other countries from using giant military cats".`,
-    media: [],
-  },
-  "1215277385404309504": {
-    id: "1215277385404309504",
-    authorHandle: "giantcat9",
-    timestamp: "2020-01-01T11:53:00+00:00",
-    sortedTimestamp: "2020-01-01T11:53:00+00:00",
-    likedBy: [],
-    retweetedBy: [],
-    status: `Come adopt Storm #Philadelphia
-He needs you to storm the enemy lines and find his new #ForeverHome
-#AdoptDontShop
-https://morrisanimalrefuge.org/adopt/storm `,
-    media: [
-      {
-        type: "img",
-        url: "/assets/giant-cat-with-tanks.jpg",
-      },
-    ],
-  },
-  "1216044243980095488": {
-    id: "1216044243980095488",
-    authorHandle: "giantcat9",
-    timestamp: "2020-01-11T12:08:00+00:00",
-    sortedTimestamp: "2020-01-11T12:08:00+00:00",
-    likedBy: [],
-    retweetedBy: [],
-    status: `USNS Comfort (T-AH-20)`,
-    media: [
-      {
-        type: "img",
-        url: "/assets/EOBBt4RWsAE9dBn.jpg",
-      },
-    ],
-  },
-  "1215996774806106114": {
-    id: "1215996774806106114",
-    authorHandle: "giantcat9",
-    timestamp: "2020-01-11T08:59:00+00:00",
-    sortedTimestamp: "2020-01-11T08:59:00+00:00",
-    likedBy: [],
-    retweetedBy: [],
-    status: `"Scotland Forever!"
-by Lady Butler / 1881`,
-    media: [
-      {
-        type: "img",
-        url: "/assets/EOAWiDjX0AA8JR-.jpg",
-      },
-    ],
-  },
-  "1215991148579315713": {
-    id: "1215991148579315713",
-    authorHandle: "giantcat9",
-    timestamp: "2020-01-11T08:37:00+00:00",
-    sortedTimestamp: "2020-01-11T08:37:00+00:00",
-    likedBy: [],
-    retweetedBy: [],
-    status: `M1128 Stryker MGS`,
-    media: [
-      {
-        type: "img",
-        url: "/assets/EOARYNrX4AE1qTN.jpg",
-      },
-    ],
-  },
-  "1215953505451638784": {
-    id: "1215953505451638784",
-    authorHandle: "giantcat9",
-    timestamp: "2020-01-12T17:27:00+00:00",
-    sortedTimestamp: "2020-01-12T17:27:00+00:00",
-    likedBy: [],
-    retweetedBy: [],
-    status: `Stridsbåt 90H (CB90)`,
-    media: [
-      {
-        type: "img",
-        url: "/assets/EN_vOBvW4AAnbML.jpg",
-      },
-    ],
   },
 };
 
