@@ -42,6 +42,7 @@ export default App;
 
 const Content = styled.div`
   flex: 1;
+  padding-inline: 4vw;
 `;
 
 const Container = styled.div`

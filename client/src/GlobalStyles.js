@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
 */
 
 :root {
-	--sidebar_width: 20vw;
+	--sidebar_width: 15vw;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -51,11 +51,8 @@ body {
 	line-height: 1;
 	margin: 0 auto;
 	background: ${COLORS.background};
-	border-left: 1px solid ${COLORS.matte_blue};
-	border-right: 1px solid ${COLORS.matte_blue};
 	color: ${COLORS.primary_blue};
 	min-height: 100vh;
-	width: 90vw;
 	font-family: 'Poppins', sans-serif;
 }
 ol, ul {

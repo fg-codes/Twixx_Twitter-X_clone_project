@@ -121,7 +121,7 @@ A fully-functional Twitter clone would have many other features that we won't be
 - Attaching media to new tweets
 - The "share" / "upload" button on tweets (only the "like" button should do anything)
 
-Some of these features are optional stretch goals. For more information, see `STRETCH.md` once you have completed all the primary objectives.
+Some of these features are optional stretch goals. For more information, see `STRETCH.md` once you have completed all the primary_blue objectives.
 
 ---
 
@@ -176,7 +176,7 @@ In our clone, a bright purple is used in a lot of different places. To reduce du
 ```js
 export const COLORS = {
   // Bright purple:
-  primary: "hsl(258deg, 100%, 50%)",
+  primary_blue: "hsl(258deg, 100%, 50%)",
 
   // Add more colors as needed!
 };
@@ -211,7 +211,7 @@ const NavigationLink = styled(NavLink)`
   /* default styles here */
 
   &.active {
-    color: ${COLORS.primary};
+    color: ${COLORS.primary_blue};
   }
 `;
 ```

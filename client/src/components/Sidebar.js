@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import { COLORS } from "../GlobalStyles";
 import { NavLink } from "react-router-dom";
 import { FiBell, FiHome, FiUser, FiBookmark } from 'react-icons/fi';
-import logo from '../logo.svg'
+import logo from '../logo.png'
 import { CurrentUserContext } from "./CurrentUserContext";
 import { useContext } from "react";
 
@@ -12,8 +12,8 @@ export const Sidebar = () => {
     <Wrapper>
       <Content>
         <Logo src={logo}></Logo>
-        <StyledLink to='/'><FiHome />Home</StyledLink>
-        <StyledLink to={`/${currentuser && currentuser.handle}`}><FiUser />Profile</StyledLink>
+        <StyledLink to='/'><FiHome />Home Feed</StyledLink>
+        <StyledLink to={`/${currentuser && currentuser.handle}`}><FiUser />Your Profile</StyledLink>
         <StyledLink to='/notifications'><FiBell />Notifications</StyledLink>
         <StyledLink to='/bookmarks'><FiBookmark />Bookmarks</StyledLink>
       </Content>
@@ -23,9 +23,9 @@ export const Sidebar = () => {
 
 const Wrapper = styled.div`
   position: relative;
-  border-right: 1px solid ${COLORS.matte_blue};
   min-height: 100vh;
-  width: var(--sidebar_width);
+  padding-inline: 4vw;
+  width: fit-content;
 `;
 
 const Content = styled.div`
@@ -33,38 +33,35 @@ const Content = styled.div`
   top: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 40px;
+  gap: 15px;
+  width: fit-content;
+  padding-block: 2vw;
 `;
 const Logo = styled.img`
-  width: 100%;
-  opacity: 0.25;
-  position: absolute;
-  top: 10px;
-  left: 0px;
+  width: 80%;
+  margin-bottom: 2vw;
+  transition: all 200ms ease-in-out;
+  &:hover {
+    scale: 1.05;
+    cursor: pointer;
+  }
 `;
 
 const StyledLink = styled(NavLink)`
-  z-index: 10;
   display: flex;
   gap: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.2rem;
+  padding: 5px 0;
   width: fit-content;
-  padding: 10px 16px;
-  border-radius: 50px;
+  text-decoration: none;
   transition: all 200ms ease-in-out;
-  color: ${COLORS.primary_blue};
+  color: ${COLORS.secondary_text};
   &:hover {
-    background-color: ${COLORS.matte_blue};
-    color: ${COLORS.background};
-    font-weight: 500;
+    color: ${COLORS.hover};
   }
   &.active {
     color: ${COLORS.primary_blue};
   }
   &.active:hover {
-    color: ${COLORS.background};
+    color: ${COLORS.hover};
   }
 `;
