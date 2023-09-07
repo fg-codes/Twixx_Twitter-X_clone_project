@@ -7,7 +7,6 @@ import { Loading } from "./utils/Loading";
 import { format } from 'date-fns';
 import { COLORS } from "../GlobalStyles";
 
-
 export const TweetDetails = () => {
   const { tweetId } = useParams();
   const [tweet, setTweet] = useState(null);
@@ -16,7 +15,10 @@ export const TweetDetails = () => {
   useEffect(() => {
     fetch(`/api/tweet/${tweetId}`)
       .then(res => res.json())
-      .then(data => setTweet(data.tweet))
+      .then(data => {
+        setTweet(data.tweet)
+        console.log(data.tweet)
+      })
       .catch(() => setError(true))
   }, [])
   return (
@@ -24,66 +26,79 @@ export const TweetDetails = () => {
       ? <Error />
       : !tweet
         ? <Loading />
-        : <Wrapper>
+        : <Section>
           <UserDetails>
             <Avatar src={tweet.author.avatarSrc}></Avatar>
             <HandleDetails to={`/${tweet.author.handle}`}>
               <SpanBold>{tweet.author.displayName}</SpanBold>
-              <Span>{` @${tweet.author.handle}`}</Span>
+              <SpanHandler>{` @${tweet.author.handle}`}</SpanHandler>
             </HandleDetails>
           </UserDetails>
           <Status>{tweet.status}</Status>
           {tweet.media.length > 0 && (<Image src={tweet.media[0].url}></Image>)}
-          <TimeFormat>{format(new Date(tweet.timestamp), 'h:mm aa - MMM dd yyyy')} - Critter web app</TimeFormat>
-          <TweetActions />
-        </Wrapper>
+          <TimeFormat>{format(new Date(tweet.timestamp), 'h:mm aa - MMM dd yyyy')} - Twixx web app</TimeFormat>
+          <TweetActions retweets={tweet.numRetweets} likes={tweet.numLikes} />
+        </Section>
   )
 }
 
-const Span = styled.span`
-  text-decoration: none;
-  transition: all 200ms ease-in-out;
-  color: ${COLORS.primary_blue};
-  &:hover {
-    color: ${COLORS.matte_blue};
-  }
+const Section = styled.section`
+  margin-top: 4vh;
+  background-color: ${COLORS.card};
+  border-radius: 5px;
+  padding: 4vh 4vh 2vh;
+  margin-bottom: 80px;
 `;
 
-const TimeFormat = styled.div`
-  padding: 10px;
-`;
-
-const Status = styled.p`
-  margin: 30px 40px;
-`;
-
-const SpanBold = styled(Span)`
-  font-weight: 800;
-  font-size: 20px;
-`;
-const Wrapper = styled.div`
-  padding: 30px;
-`;
 const Avatar = styled.img`
-  width: 80px;
-  border-radius: 50px;
-`;
-const UserDetails = styled.div`
-  display: flex;
-  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
 `;
 
 const HandleDetails = styled(Link)`
   display: flex;
   flex-direction: column;
   text-decoration: none;
+  color: ${COLORS.primary_text};
   gap: 5px;
-  padding: 0px 10px;
+  padding: 0px 20px;
+`;
+
+const SpanBold = styled.span`
+  font-weight: 600;
+  font-size: 20px;
+`;
+
+const SpanHandler = styled.span`
+  transition: all 200ms ease-in-out;
+  &:hover {
+    color: ${COLORS.primary_blue};
+  }
+`;
+
+const TimeFormat = styled.div`
+  padding: 10px;
+  color: ${COLORS.secondary_text};
+  font-size: 14px;
+`;
+
+const Status = styled.p`
+  padding: 4vh 2vh;
+  color: ${COLORS.secondary_text};
+  font-style: italic;
+  line-height: 22px;
+`;
+
+const UserDetails = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const Image = styled.img`
   width: 100%;
-  height: 600px;
-  border-radius: 20px;
-  object-fit: fill;
+  height: 60%;
+  border-radius: 5px;
+  object-fit: cover;
 `;
