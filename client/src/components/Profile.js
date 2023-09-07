@@ -21,7 +21,7 @@ export const Profile = () => {
       .then(res => res.json())
       .then(data => {
         setHandle(data.profile);
-        scrollUpRef.current && (scrollUpRef.current.scrollIntoView());
+        scrollUpRef.current && scrollUpRef.current.scrollIntoView();
       })
       .catch(error => console.log(error))
   }, [profileId]);
@@ -42,21 +42,30 @@ export const Profile = () => {
       : <Wrapper ref={scrollUpRef}>
         <Banner src={handle.bannerSrc}></Banner>
         <Content>
-          <AvatarDiv>
+
+          <Heading>
             <Avatar src={handle.avatarSrc}></Avatar>
-            <FollowHandle>{handle.isBeingFollowedByYou ? "Following" : "Follow!"}</FollowHandle>
-          </AvatarDiv>
+            <TagSpan>
+              <Tag>{handle.isBeingFollowedByYou ? "Following" : "Follow!"}</Tag>
+              <Tag>{handle.isFollowingYou ? 'Follows you' : "Does not follow you"}</Tag>
+            </TagSpan>
+          </Heading>
+
+
           <HandleName>{handle.displayName}</HandleName>
-          <Tag>{`@${handle.handle}`}<TagSpan>{handle.isFollowingYou ? 'Follows you' : "Does not follow you"}</TagSpan></Tag>
+          {`@${handle.handle}`}
           <Bio>{handle.bio}</Bio>
+
           <Placer>
             <div>{handle.location && (<><FiMapPin /> {handle.location}</>)}</div>
             <div><FiCalendar /> {format(new Date(handle.joined), 'LLLL yyyy')}</div>
           </Placer>
+
           <Placer>
             <div><Bold>{handle.numFollowing}</Bold> Following</div>
             <div><Bold>{handle.numFollowers}</Bold> Followers</div>
           </Placer>
+
         </Content>
         <Div>
           <Tabulate tab={tab} setTab={setTab} />
@@ -78,6 +87,38 @@ export const Profile = () => {
   )
 }
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: ${COLORS.card};
+`;
+
+const Banner = styled.img`
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+`;
+
+const TagSpan = styled.span`
+  font-size: 14px;
+  display: flex;
+  gap: 10px;
+`;
+
+const Tag = styled.div`
+  background-color: ${COLORS.hover};
+  color: ${COLORS.secondary_text};
+  padding: 10px 20px;
+  border-radius: 5px;
+`;
+
+const HandleName = styled.div`
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 20px 0px 10px;
+  color: ${COLORS.primary_text};
+`;
+
 const FilterDiv = styled.div`
   text-align: center;
   margin: 40px 0px 120px;
@@ -86,6 +127,7 @@ const FilterDiv = styled.div`
 const Div = styled.div`
   position: relative;
 `;
+
 const Placer = styled.div`
   padding-top: 20px;
   display: flex;
@@ -98,32 +140,10 @@ const Bold = styled.span`
   color: ${COLORS.primary_blue}
 `;
 const Bio = styled.p`
-  padding: 20px 20vw 20px 40px;
-`;
-const Tag = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.2rem;
-`;
-const TagSpan = styled.span`
-  background-color: lightgray;
-  padding: 5px;
-  border-radius: 5px;
-  font-size: 1rem;
-`;
-
-const HandleName = styled.div`
-  font-size: 1.5rem;
-  font-weight: 800;
-  margin: 10px 0px;
-`;
-const FollowHandle = styled.div`
-  background-color: ${COLORS.matte_blue};
-  width: fit-content;
-  padding: 15px 30px;
-  border-radius: 200px;
-  color: ${COLORS.background}
+  padding: 4vh;
+  color: ${COLORS.secondary_text};
+  font-style: italic;
+  line-height: 22px;
 `;
 
 const Content = styled.div`
@@ -132,20 +152,18 @@ const Content = styled.div`
   top: -100px;
 `;
 
-const AvatarDiv = styled.div`
+const Heading = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 `;
+
 const Avatar = styled.img`
   width: 200px;
-  border-radius: 500px;
-  border: 5px solid ${COLORS.background};  
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid ${COLORS.card};  
 `;
-const Banner = styled.img`
-  width: 100%;
-`;
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+
+
