@@ -1,28 +1,36 @@
-import styled from "styled-components";
-import { FaSadCry } from "react-icons/fa";
-import { COLORS } from "../../GlobalStyles";
+import { styled } from 'styled-components';
+import { COLORS } from '../../GlobalStyles';
+import { FaSadCry } from 'react-icons/fa';
 
 export const Error = () => {
   return (
     <Wrapper>
       <StyledFaSadCry />
       <H1>AN UNKNOWN ERROR HAS OCCURED.</H1>
-      <p>Please try refreshing the page, or <a href="mailto:please@dont.com">contact support</a> if the problem persists.</p>
+      <p>Please try refreshing the page, or <Email href='mailto:please@dont.com'>contact support</Email> if the problem persists.</p>
     </Wrapper>
   )
 }
 
-const Wrapper = styled.div`
-  padding: 5vh;
-  text-align: center;
-`;
-
 const StyledFaSadCry = styled(FaSadCry)`
-  font-size: 200px;
+  font-size: 75px;
+  margin-bottom: 30px;
 `;
 
 const H1 = styled.h1`
-  font-size: 45px;
-  margin: 20px;
+  font-size: 20px;
+  margin: 10px;
+`;
+
+const Wrapper = styled.div`
+  text-align: center;
+  padding: 20px;
+  color: ${COLORS.secondary_text};
+  width: fit-content;
+  margin: 20px auto;
+  border-radius: 5px;
+`;
+
+const Email = styled.a`
   color: ${COLORS.primary_blue};
 `;

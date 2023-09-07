@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 import { useState, useContext } from 'react';
 import { CurrentUserContext } from './CurrentUserContext';
 import { COLORS } from '../GlobalStyles';
-import { Error } from './Error';
+import { Error } from './utils/Error';
 import { LoadingSmall } from './utils/Loading';
 
 export const InputField = ({ reload, setReload }) => {
