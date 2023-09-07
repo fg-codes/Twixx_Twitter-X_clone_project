@@ -118,14 +118,13 @@ const duplicateTweetReducer = (acc, tweet, index, allTweets) => {
 
 const getTweetsForUser = userId => {
   const user = data.users[userId];
-
   return Object.values(data.tweets)
     .filter(
       tweet =>
         user.followingIds.includes(tweet.authorHandle) ||
         tweet.authorHandle === CURRENT_USER_HANDLE
     )
-    .reduce(duplicateTweetReducer, [])
+    // .reduce(duplicateTweetReducer, [])
     .map(resolveRetweet)
     .map(denormalizeTweet);
 };
