@@ -60,12 +60,10 @@ export const InputField = ({ reload, setReload }) => {
   )
 }
 
-
-
 const Form = styled.form`
   background-color: ${COLORS.card};
   border-radius: 5px;
-  margin: 0 auto;
+  margin: 4vh auto 0;
   padding: 40px;
   display: flex;
   flex-direction: column;

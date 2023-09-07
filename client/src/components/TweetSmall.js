@@ -39,8 +39,10 @@ export const TweetSmall = ({ tweet }) => {
   )
 }
 const Section = styled.section`
-  padding: 30px 60px 30px 30px;
-  border-bottom: 1px solid ${COLORS.matte_blue};
+  margin-top: 4vh;
+  background-color: ${COLORS.card};
+  border-radius: 5px;
+  padding: 40px;
 `;
 
 const Span = styled.span`

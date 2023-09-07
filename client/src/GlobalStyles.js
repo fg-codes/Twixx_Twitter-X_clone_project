@@ -53,7 +53,7 @@ body {
 	background: ${COLORS.background};
 	color: ${COLORS.primary_blue};
 	min-height: 100vh;
-	padding: 4vh 8vh;
+	padding-inline: 8vh;
 	font-family: 'Poppins', sans-serif;
 }
 ol, ul {
