@@ -6,8 +6,6 @@ import { FiRepeat } from 'react-icons/fi';
 import { COLORS } from '../GlobalStyles';
 
 export const TweetSmall = ({ tweet }) => {
-
-  console.log(tweet)
   const navigate = useNavigate();
 
   const handleClick = (event, to) => {
@@ -18,7 +16,7 @@ export const TweetSmall = ({ tweet }) => {
   return (
     tweet && (
       <Section>
-        {tweet.retweetFrom && (<div><FiRepeat /> {tweet.author.displayName} Reposted</div>)}
+        {tweet.retweetFrom && (<div><FiRepeat /> {tweet.retweetFrom.displayName} Reposted</div>)}
         <Wrapper>
           <div><Avatar src={tweet.author.avatarSrc}></Avatar></div>
           <Content>
