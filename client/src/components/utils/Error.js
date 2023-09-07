@@ -23,12 +23,16 @@ const H1 = styled.h1`
 `;
 
 const Wrapper = styled.div`
-  text-align: center;
   padding: 20px;
   color: ${COLORS.secondary_text};
   width: fit-content;
   margin: 20px auto;
   border-radius: 5px;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Email = styled.a`
