@@ -6,9 +6,9 @@ const users = {
     bannerSrc: "/assets/banner-JohnDoe.jpeg",
     location: "Toronto, Canada",
     url: "https://www.johndoe.com",
-    joined: "2022-02-02T12:00",
+    joined: "2023-01-10T12:00",
     bio: "Aspiring writer with a passion for technology. 📚🖥️ Exploring the fusion of storytelling and tech's endless possibilities.",
-    followingIds: ["AliceSmith", "TechGuru123", "FoodieLover", "TravelExplorer"],
+    followingIds: ["AliceSmith", "TechGuru123", "FoodieLover", "TravelExplorer", "FitnessFanatic"],
     followerIds: ["AliceSmith", "FoodieLover"],
     likeIds: ["1212689921057665024"],
   },
@@ -20,7 +20,7 @@ const users = {
     bannerSrc: "/assets/banner-AliceSmith.jpeg",
     location: "Los Angeles, USA",
     url: "https://www.alicesmithblog.com",
-    joined: "2022-03-03T12:00",
+    joined: "2023-01-11T12:00",
     bio: "Nature lover and adventurer. 🌿🌄",
     followingIds: ["JohnDoe", "TechGuru123", "FitnessFanatic"],
     followerIds: ["JohnDoe", "TechGuru123", "TravelExplorer", "FoodieLover"],
@@ -29,12 +29,12 @@ const users = {
 
   TechGuru123: {
     handle: "TechGuru123",
-    displayName: "Tech Guru 2000",
+    displayName: "Christopher Ferguson 2000",
     avatarSrc: "/assets/avatar-TechGuru123.jpg",
     bannerSrc: "/assets/banner-TechGuru123.jpeg",
     location: "Tokyo, Japan",
     url: "https://www.techgurureviews.com",
-    joined: "2022-04-04T18:00",
+    joined: "2023-01-12T18:00",
     bio: "Sharing the latest in tech trends and gadgets. 💻📱",
     followingIds: ["AliceSmith", "FoodieLover", "TravelExplorer", "FitnessFanatic"],
     followerIds: ["JohnDoe", "AliceSmith"],
@@ -43,12 +43,12 @@ const users = {
 
   FoodieLover: {
     handle: "FoodieLover",
-    displayName: "Maddie aka Foodie Lover",
+    displayName: "Angelina Marcantognini",
     avatarSrc: "/assets/avatar-FoodieLover.jpg",
     bannerSrc: "/assets/banner-FoodieLover.jpeg",
     location: "Nashville, USA",
     url: "https://www.foodieadventures.com",
-    joined: "2022-05-05T18:00",
+    joined: "2023-01-13T18:00",
     bio: "Exploring the world one meal at a time. 🍔🍕",
     followingIds: ["JohnDoe", "TravelExplorer", "FitnessFanatic", "FoodieLover"],
     followerIds: ["JohnDoe", "TechGuru123", "TravelExplorer"],
@@ -57,12 +57,12 @@ const users = {
 
   TravelExplorer: {
     handle: "TravelExplorer",
-    displayName: "Travel Explorer",
+    displayName: "Michael Telford",
     avatarSrc: "/assets/avatar-TravelExplorer.jpg",
     bannerSrc: "/assets/banner-TravelExplorer.jpeg",
     location: "Sydney, Australia",
     url: "https://www.traveltheworldwithme.com",
-    joined: "2022-06-06T18:00",
+    joined: "2023-01-14T18:00",
     bio: "Roaming the globe and sharing travel tales. 🌍✈️",
     followingIds: ["AliceSmith", "FoodieLover", "FitnessFanatic"],
     followerIds: ["JohnDoe", "TechGuru123", "FoodieLover", "FitnessFanatic"],
@@ -71,12 +71,12 @@ const users = {
 
   FitnessFanatic: {
     handle: "FitnessFanatic",
-    displayName: "Fitness Fanatic",
+    displayName: "Kevin Simmons",
     avatarSrc: "/assets/avatar-FitnessFanatic.jpg",
     bannerSrc: "/assets/banner-FitnessFanatic.png",
     location: "San Francisco, USA",
     url: "https://www.fitnessjourney.com",
-    joined: "2022-07-07T18:00",
+    joined: "2023-01-15T18:00",
     bio: "Living a healthy and active lifestyle. 💪🏋️",
     followingIds: ["TravelExplorer"],
     followerIds: ["AliceSmith", "TechGuru123", "FoodieLover", "TravelExplorer"],
@@ -86,20 +86,11 @@ const users = {
 
 const tweets = {
   // JohnDoe
-  "8192327576064052r1": {
-    id: "8192327576064052r1",
-    authorHandle: "JohnDoe",
-    timestamp: "2023-02-20T09:14:00+00:00",
-    sortedTimestamp: "2023-02-20T09:14:00+00:00",
-    retweetOf: "8192327576064052",
-    likedBy: [],
-    retweetedBy: [],
-  },
   "9325965937879404": {
     id: "9325965937879404",
     authorHandle: "JohnDoe",
-    timestamp: "2022-03-13T09:14:00+00:00",
-    sortedTimestamp: "2022-03-13T09:14:00+00:00",
+    timestamp: "2023-02-10T09:14:00+00:00",
+    sortedTimestamp: "2023-02-10T09:14:00+00:00",
     likedBy: ["FoodieLover"],
     retweetedBy: [],
     status:
@@ -114,8 +105,8 @@ const tweets = {
   "6449055778308144": {
     id: "6449055778308144",
     authorHandle: "JohnDoe",
-    timestamp: "2022-03-14T09:14:00+00:00",
-    sortedTimestamp: "2022-03-14T09:14:00+00:00",
+    timestamp: "2023-04-17T09:14:00+00:00",
+    sortedTimestamp: "2023-04-17T09:14:00+00:00",
     likedBy: [],
     retweetedBy: [],
     status:
@@ -123,15 +114,14 @@ const tweets = {
     media: [],
   },
 
-
   // AliceSmith
   "3911391382148489": {
     id: "3911391382148489",
     authorHandle: "AliceSmith",
-    timestamp: "2022-04-14T09:14:00+00:00",
-    sortedTimestamp: "2022-04-14T09:14:00+00:00",
+    timestamp: "2023-03-01T09:14:00+00:00",
+    sortedTimestamp: "2023-03-01T09:14:00+00:00",
     likedBy: ["TechGuru123", "TravelExplorer"],
-    retweetedBy: ["TravelExplorer"],
+    retweetedBy: [],
     status:
       "I embarked on a two-night trek through the stunning Chinese mountains, immersing myself in rugged terrain and breathtaking scenery. It was an adventure that truly touched my heart! ❤️❤️",
     media: [
@@ -141,33 +131,24 @@ const tweets = {
       },
     ],
   },
-  "8192327576064052": {
-    id: "8192327576064052",
+  "1215324598067245": {
+    id: "1215324598067245",
     authorHandle: "AliceSmith",
-    timestamp: "2022-04-15T09:14:00+00:00",
-    sortedTimestamp: "2022-04-15T09:14:00+00:00",
+    timestamp: "2023-04-05T09:14:00+00:00",
+    sortedTimestamp: "2023-04-05T09:14:00+00:00",
     likedBy: ["JohnDoe"],
-    retweetedBy: ["JohnDoe", "FoodieLover"],
+    retweetedBy: ["FoodieLover"],
     status:
       "At Rachel Claire boutique, I stumbled upon an exquisite collection of bath products and perfume, each a fragrant masterpiece. It was a delightful discovery.",
     media: [],
   },
 
   // TechGuru123
-  "6661005865559667r1": {
-    id: "6661005865559667r1",
-    authorHandle: "TechGuru123",
-    timestamp: "2023-03-13T09:14:00+00:00",
-    sortedTimestamp: "2023-03-13T09:14:00+00:00",
-    retweetOf: "6661005865559667",
-    likedBy: ["FoodieLover", "AliceSmith"],
-    retweetedBy: [],
-  },
   "6710219229755186": {
     id: "6710219229755186",
     authorHandle: "TechGuru123",
-    timestamp: "2022-05-15T09:14:00+00:00",
-    sortedTimestamp: "2022-05-15T09:14:00+00:00",
+    timestamp: "2023-05-15T09:14:00+00:00",
+    sortedTimestamp: "2023-05-15T09:14:00+00:00",
     likedBy: ["JohnDoe"],
     retweetedBy: [],
     status:
@@ -179,25 +160,24 @@ const tweets = {
       },
     ],
   },
-
-
-  // FoodieLover
-  "8192327576064052r2": {
-    id: "8192327576064052r2",
-    authorHandle: "FoodieLover",
-    timestamp: "2023-05-15T09:14:00+00:00",
-    sortedTimestamp: "2023-05-15T09:14:00+00:00",
-    retweetOf: "8192327576064052",
+  "2392375331521837r1": {
+    id: "2392375331521837r1",
+    authorHandle: "TechGuru123",
+    timestamp: "2023-05-19T09:14:00+00:00",
+    sortedTimestamp: "2023-05-19T09:14:00+00:00",
+    retweetOf: "2392375331521837",
     likedBy: [],
     retweetedBy: [],
   },
+
+  // FoodieLover
   "2392375331521837": {
     id: "2392375331521837",
     authorHandle: "FoodieLover",
-    timestamp: "2022-06-16T09:14:00+00:00",
-    sortedTimestamp: "2022-06-16T09:14:00+00:00",
+    timestamp: "2023-04-28T09:14:00+00:00",
+    sortedTimestamp: "2023-04-28T09:14:00+00:00",
     likedBy: [],
-    retweetedBy: [],
+    retweetedBy: ["TechGuru123"],
     status:
       "Tacos Tuesday fiesta at the Tiki Bar! 🌮🎉",
     media: [
@@ -210,8 +190,8 @@ const tweets = {
   "0574698479845977": {
     id: "0574698479845977",
     authorHandle: "FoodieLover",
-    timestamp: "2022-07-17T09:14:00+00:00",
-    sortedTimestamp: "2022-07-17T09:14:00+00:00",
+    timestamp: "2023-04-21T09:14:00+00:00",
+    sortedTimestamp: "2023-04-21T09:14:00+00:00",
     likedBy: [],
     retweetedBy: [],
     status:
@@ -226,10 +206,10 @@ const tweets = {
   "6661005865559667": {
     id: "6661005865559667",
     authorHandle: "FoodieLover",
-    timestamp: "2022-08-18T09:14:00+00:00",
-    sortedTimestamp: "2022-08-18T09:14:00+00:00",
+    timestamp: "2023-03-05T09:14:00+00:00",
+    sortedTimestamp: "2023-03-05T09:14:00+00:00",
     likedBy: ["TechGuru123"],
-    retweetedBy: ["TechGuru123"],
+    retweetedBy: [],
     status:
       "OMG I was making breakfast, and when I popped my toast out of the toaster, it had this PERFECT cat shape on it! 😻🙌 It's like my breakfast is trying to tell me something...maybe I should adopt a kitty? 🤔❤️",
     media: [
@@ -239,25 +219,24 @@ const tweets = {
       },
     ],
   },
-
-
-  // TravelExplorer
-  "3911391382148489r1": {
-    id: "3911391382148489r1",
-    authorHandle: "TravelExplorer",
-    timestamp: "2023-08-11T09:14:00+00:00",
-    sortedTimestamp: "2023-08-11T09:14:00+00:00",
-    retweetOf: "3911391382148489",
+  "1215324598067245r1": {
+    id: "1215324598067245r1",
+    authorHandle: "FoodieLover",
+    timestamp: "2023-05-17T09:14:00+00:00",
+    sortedTimestamp: "2023-05-17T09:14:00+00:00",
+    retweetOf: "1215324598067245",
     likedBy: [],
     retweetedBy: [],
   },
+
+  // TravelExplorer
   "2577516047780438": {
     id: "2577516047780438",
     authorHandle: "TravelExplorer",
-    timestamp: "2022-11-21T09:14:00+00:00",
-    sortedTimestamp: "2022-11-21T09:14:00+00:00",
-    likedBy: [],
-    retweetedBy: ["FitnessFanatic"],
+    timestamp: "2023-06-14T09:14:00+00:00",
+    sortedTimestamp: "2023-06-14T09:14:00+00:00",
+    likedBy: ["TechGuru123", "AliceSmith"],
+    retweetedBy: [],
     status:
     "My life is a jet-set dream. From exotic destinations to luxury accommodations, I've perfected the art of living life to the fullest. Travel isn't a pastime; it's a statement, and I'm the master of the game. Stay tuned for my next conquest! ✈️🌍🏨 #Jetsetter #LivingLarge",
     media: [
@@ -268,22 +247,12 @@ const tweets = {
     ],
   },
 
-
   // FitnessFanatic
-  "2577516047780438r1": {
-    id: "2577516047780438r1",
-    authorHandle: "FitnessFanatic",
-    timestamp: "2023-09-09T09:14:00+00:00",
-    sortedTimestamp: "2023-09-09T09:14:00+00:00",
-    retweetOf: "2577516047780438",
-    likedBy: [],
-    retweetedBy: [],
-  },
   "3341929402841045": {
     id: "3341929402841045",
     authorHandle: "FitnessFanatic",
-    timestamp: "2022-12-21T09:14:00+00:00",
-    sortedTimestamp: "2022-12-21T09:14:00+00:00",
+    timestamp: "2023-02-22T09:14:00+00:00",
+    sortedTimestamp: "2023-02-22T09:14:00+00:00",
     likedBy: [],
     retweetedBy: [],
     status:
@@ -295,7 +264,6 @@ const tweets = {
       },
     ],
   },
-
 };
 
 module.exports = {
