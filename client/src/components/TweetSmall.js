@@ -107,6 +107,6 @@ const Image = styled.img`
   transition: all 200ms ease-in-out;
   &:hover {
     transform: translate(-2px, -2px);
-    box-shadow: 4px 4px 12px ${COLORS.secondary_text}88;
+    box-shadow: 2px 2px 6px ${COLORS.secondary_text}88;
   }
 `;

@@ -220,7 +220,7 @@ const tweets = {
     likedBy: [],
     retweetedBy: [],
     status:
-      "🐱🐱🐱",
+      "I was making breakfast, and when I popped my toast out of the toaster, it had this PERFECT cat shape on it! 😻🙌 It's like my breakfast is trying to tell me something...maybe I should adopt a kitty? 🤔❤️",
     media: [
       {
         type: "img",
