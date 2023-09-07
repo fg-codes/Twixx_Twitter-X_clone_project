@@ -86,6 +86,15 @@ const users = {
 
 const tweets = {
   // JohnDoe
+  "8192327576064052r1": {
+    id: "8192327576064052r1",
+    authorHandle: "JohnDoe",
+    timestamp: "2023-02-20T09:14:00+00:00",
+    sortedTimestamp: "2023-02-20T09:14:00+00:00",
+    retweetOf: "8192327576064052",
+    likedBy: [],
+    retweetedBy: [],
+  },
   "9325965937879404": {
     id: "9325965937879404",
     authorHandle: "JohnDoe",
@@ -113,15 +122,7 @@ const tweets = {
       "I loved my time at the reader group meeting, and meeting Alexander Radulov was an unexpected delight. A perfect blend of literature and sports!",
     media: [],
   },
-  "8192327576064052r1": {
-    id: "8192327576064052r1",
-    authorHandle: "JohnDoe",
-    timestamp: "2023-02-20T09:14:00+00:00",
-    sortedTimestamp: "2023-02-20T09:14:00+00:00",
-    retweetOf: "8192327576064052",
-    likedBy: [],
-    retweetedBy: [],
-  },
+
 
   // AliceSmith
   "3911391382148489": {
@@ -153,6 +154,15 @@ const tweets = {
   },
 
   // TechGuru123
+  "6661005865559667r1": {
+    id: "6661005865559667r1",
+    authorHandle: "TechGuru123",
+    timestamp: "2023-03-13T09:14:00+00:00",
+    sortedTimestamp: "2023-03-13T09:14:00+00:00",
+    retweetOf: "6661005865559667",
+    likedBy: ["FoodieLover", "AliceSmith"],
+    retweetedBy: [],
+  },
   "6710219229755186": {
     id: "6710219229755186",
     authorHandle: "TechGuru123",
@@ -169,17 +179,18 @@ const tweets = {
       },
     ],
   },
-  "6661005865559667r1": {
-    id: "6661005865559667r1",
-    authorHandle: "TechGuru123",
-    timestamp: "2023-03-13T09:14:00+00:00",
-    sortedTimestamp: "2023-03-13T09:14:00+00:00",
-    retweetOf: "6661005865559667",
+
+
+  // FoodieLover
+  "8192327576064052r2": {
+    id: "8192327576064052r2",
+    authorHandle: "FoodieLover",
+    timestamp: "2023-05-15T09:14:00+00:00",
+    sortedTimestamp: "2023-05-15T09:14:00+00:00",
+    retweetOf: "8192327576064052",
     likedBy: [],
     retweetedBy: [],
   },
-
-  // FoodieLover
   "2392375331521837": {
     id: "2392375331521837",
     authorHandle: "FoodieLover",
@@ -217,8 +228,8 @@ const tweets = {
     authorHandle: "FoodieLover",
     timestamp: "2022-08-18T09:14:00+00:00",
     sortedTimestamp: "2022-08-18T09:14:00+00:00",
-    likedBy: [],
-    retweetedBy: [],
+    likedBy: ["TechGuru123"],
+    retweetedBy: ["TechGuru123"],
     status:
       "OMG I was making breakfast, and when I popped my toast out of the toaster, it had this PERFECT cat shape on it! 😻🙌 It's like my breakfast is trying to tell me something...maybe I should adopt a kitty? 🤔❤️",
     media: [
@@ -228,17 +239,18 @@ const tweets = {
       },
     ],
   },
-  "8192327576064052r2": {
-    id: "8192327576064052r2",
-    authorHandle: "FoodieLover",
-    timestamp: "2023-05-15T09:14:00+00:00",
-    sortedTimestamp: "2023-05-15T09:14:00+00:00",
-    retweetOf: "8192327576064052",
+
+
+  // TravelExplorer
+  "3911391382148489r1": {
+    id: "3911391382148489r1",
+    authorHandle: "TravelExplorer",
+    timestamp: "2023-08-11T09:14:00+00:00",
+    sortedTimestamp: "2023-08-11T09:14:00+00:00",
+    retweetOf: "3911391382148489",
     likedBy: [],
     retweetedBy: [],
   },
-
-  // TravelExplorer
   "2577516047780438": {
     id: "2577516047780438",
     authorHandle: "TravelExplorer",
@@ -255,17 +267,18 @@ const tweets = {
       },
     ],
   },
-  "3911391382148489r1": {
-    id: "3911391382148489r1",
-    authorHandle: "TravelExplorer",
-    timestamp: "2023-08-11T09:14:00+00:00",
-    sortedTimestamp: "2023-08-11T09:14:00+00:00",
-    retweetOf: "3911391382148489",
+
+
+  // FitnessFanatic
+  "2577516047780438r1": {
+    id: "2577516047780438r1",
+    authorHandle: "FitnessFanatic",
+    timestamp: "2023-09-09T09:14:00+00:00",
+    sortedTimestamp: "2023-09-09T09:14:00+00:00",
+    retweetOf: "2577516047780438",
     likedBy: [],
     retweetedBy: [],
   },
-
-  // FitnessFanatic
   "3341929402841045": {
     id: "3341929402841045",
     authorHandle: "FitnessFanatic",
@@ -282,15 +295,7 @@ const tweets = {
       },
     ],
   },
-  "2577516047780438r1": {
-    id: "2577516047780438r1",
-    authorHandle: "FitnessFanatic",
-    timestamp: "2023-09-09T09:14:00+00:00",
-    sortedTimestamp: "2023-09-09T09:14:00+00:00",
-    retweetOf: "2577516047780438",
-    likedBy: [],
-    retweetedBy: [],
-  },
+
 };
 
 module.exports = {
