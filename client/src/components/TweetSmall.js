@@ -6,6 +6,8 @@ import { FiRepeat } from 'react-icons/fi';
 import { COLORS } from '../GlobalStyles';
 
 export const TweetSmall = ({ tweet }) => {
+
+  console.log(tweet)
   const navigate = useNavigate();
 
   const handleClick = (event, to) => {
@@ -32,7 +34,7 @@ export const TweetSmall = ({ tweet }) => {
               <Status>{tweet.status}</Status>
               {tweet.media.length > 0 && (<Image src={tweet.media[0].url}></Image>)}
             </ContentLink>
-            <TweetActions />
+            <TweetActions retweets={tweet.numRetweets} likes={tweet.numLikes} />
           </Content>
         </Wrapper>
       </Section>
