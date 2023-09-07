@@ -65,6 +65,7 @@ const Avatar = styled.img`
 
 const Content = styled.div`
   width: 100%;
+  height: fit-content;
 `;
 
 const SpanBold = styled.span`
@@ -101,7 +102,7 @@ const Status = styled.p`
 
 const Image = styled.img`
   width: 100%;
-  height: 60vh;
+  height: 60%;
   border-radius: 5px;
   object-fit: cover;
   transition: all 200ms ease-in-out;
