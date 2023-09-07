@@ -1,9 +1,9 @@
-import { styled } from "styled-components";
-import { useState, useContext } from "react";
-import { CurrentUserContext } from "./CurrentUserContext";
-import { COLORS } from "../GlobalStyles";
-import { FaSadCry } from "react-icons/fa";
-import { LoadingSmall } from "./utils/Loading";
+import { styled } from 'styled-components';
+import { useState, useContext } from 'react';
+import { CurrentUserContext } from './CurrentUserContext';
+import { COLORS } from '../GlobalStyles';
+import { Error } from './Error';
+import { LoadingSmall } from './utils/Loading';
 
 export const InputField = ({ reload, setReload }) => {
   const currentUser = useContext(CurrentUserContext);
@@ -16,9 +16,9 @@ export const InputField = ({ reload, setReload }) => {
   const handleChange = ({ target }) => {
     let numChars = 280 - target.value.length
     setTextarea(target.value);
-    if (numChars <= 55 && numChars >= 0) { setColor(COLORS.yellow) }
-    else if (numChars < 0) { setColor(COLORS.red) }
-    else { setColor(initialColor) }
+    if (numChars <= 55 && numChars >= 0) setColor(COLORS.yellow)
+    else if (numChars < 0) setColor(COLORS.red)
+    else setColor(initialColor)
   }
 
   const handleSubmit = (event) => {
@@ -35,7 +35,7 @@ export const InputField = ({ reload, setReload }) => {
       .then(res => res.json())
       .then(() => {
         setColor(initialColor);
-        setTextarea("");
+        setTextarea('');
         setReload(!reload);
         setLoading(false);
       })
@@ -51,38 +51,16 @@ export const InputField = ({ reload, setReload }) => {
           onChange={handleChange}
         ></Textarea>
         <FormHandles>
-          <Characters color={color}>{!textarea ? 280 : 280 - textarea.length}</Characters>
-          <Button type="submit" disabled={color === COLORS.red || !textarea}>{loading ? <LoadingSmall /> : 'Publish'}</Button>
+          <Characters $color={color}>{!textarea ? 280 : 280 - textarea.length}</Characters>
+          <Button type='submit' disabled={color === COLORS.red || !textarea}>{loading ? <LoadingSmall /> : 'Publish'}</Button>
         </FormHandles>
-        {error && (
-          <Error>
-            <StyledFaSadCry />
-            <H1>AN UNKNOWN ERROR HAS OCCURED.</H1>
-            <p>Please try refreshing the page, or <a href="mailto:please@dont.com">contact support</a> if the problem persists.</p>
-          </Error>
-        )}
+        {error && <Error />}
       </Form>
     )
   )
 }
 
-const StyledFaSadCry = styled(FaSadCry)`
-  font-size: 50px;
-`;
 
-const H1 = styled.h1`
-  font-size: 20px;
-  margin: 10px;
-`;
-
-const Error = styled.div`
-  text-align: center;
-  padding: 10px;
-  border: 6px solid ${COLORS.red};
-  width: fit-content;
-  margin: 20px auto;
-  border-radius: 5px;
-`;
 
 const Form = styled.form`
   background-color: ${COLORS.card};
@@ -94,7 +72,7 @@ const Form = styled.form`
 `;
 
 const Characters = styled.div`
-  color: ${props => props.color};
+  color: ${props => props.$color};
   font-weight: 600;
 `;
 
@@ -102,7 +80,7 @@ const Textarea = styled.textarea`
   height: 75px;
   padding: 15px;
   resize: none;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: ${COLORS.hover};
   color: ${COLORS.secondary_text};
   border: none;
@@ -120,7 +98,7 @@ const Button = styled.button`
   font-size: 16px;
   border: none;
   outline: none;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   border-radius: 5px;
   transition: all 200ms ease-in-out;
   color: ${COLORS.primary_text};
