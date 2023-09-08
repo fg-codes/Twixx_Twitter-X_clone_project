@@ -7,12 +7,11 @@ import { COLORS } from '../GlobalStyles';
 
 export const TweetSmall = ({ tweet }) => {
   const navigate = useNavigate();
-  console.log(tweet.author.handle)
 
   const handleClick = (event, to) => {
     event.preventDefault();
-    event.stopPropagation()
-    navigate(to)
+    event.stopPropagation();
+    navigate(to);
   }
 
   return (

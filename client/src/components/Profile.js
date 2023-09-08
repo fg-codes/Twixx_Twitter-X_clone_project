@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import { useParams } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
+import { CurrentUserContext } from "./CurrentUserContext";
 import { COLORS } from "../GlobalStyles";
 import { FiMapPin, FiCalendar } from "react-icons/fi";
 import { TweetSmall } from "./TweetSmall";
@@ -10,11 +11,14 @@ import { Tabulate } from "./Tabulate";
 
 export const Profile = () => {
   const { profileId } = useParams();
+  const { currentUser } = useContext(CurrentUserContext)
   const [handle, setHandle] = useState(null);
   const [allTweets, setAllTweets] = useState(null);
   const [tweetsIds, setTweetsIds] = useState(null);
   const [tab, setTab] = useState('tweets');
   const scrollUpRef = useRef(null);
+
+console.log(currentUser)
 
   useEffect(() => {
     fetch(`/api/${profileId}/profile`)
