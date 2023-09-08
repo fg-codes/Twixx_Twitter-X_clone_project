@@ -11,14 +11,12 @@ import { Tabulate } from "./Tabulate";
 
 export const Profile = () => {
   const { profileId } = useParams();
-  const { currentUser } = useContext(CurrentUserContext)
+  const currentUser = useContext(CurrentUserContext)
   const [handle, setHandle] = useState(null);
   const [allTweets, setAllTweets] = useState(null);
   const [tweetsIds, setTweetsIds] = useState(null);
   const [tab, setTab] = useState('tweets');
   const scrollUpRef = useRef(null);
-
-console.log(currentUser)
 
   useEffect(() => {
     fetch(`/api/${profileId}/profile`)
@@ -49,10 +47,12 @@ console.log(currentUser)
 
           <Heading>
             <Avatar src={handle.avatarSrc}></Avatar>
-            <TagSpan>
-              <Tag>{handle.isBeingFollowedByYou ? "Following" : "Follow!"}</Tag>
-              <Tag>{handle.isFollowingYou ? 'Follows you' : "Does not follow you"}</Tag>
-            </TagSpan>
+            {currentUser.currentuser.handle !== handle.handle &&
+              <TagSpan>
+                <Tag>{handle.isBeingFollowedByYou ? "Following" : "Follow!"}</Tag>
+                <Tag>{handle.isFollowingYou ? 'Follows you' : "Does not follow you"}</Tag>
+              </TagSpan>}
+
           </Heading>
 
 
