@@ -1,37 +1,40 @@
 import { styled } from 'styled-components';
 import { TweetActions } from './TweetActions';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
 import { FiRepeat } from 'react-icons/fi';
 import { COLORS } from '../GlobalStyles';
 
 export const TweetSmall = ({ tweet }) => {
   const navigate = useNavigate();
+  console.log(tweet.author.handle)
 
   const handleClick = (event, to) => {
     event.preventDefault();
-    navigate(`/${to}`)
+    event.stopPropagation()
+    navigate(to)
   }
 
   return (
     tweet && (
-      <Section>
+      <Section onClick={(e) => handleClick(e, `/tweet/${tweet.id}`)}>
         {tweet.retweetFrom && (<div><FiRepeat /> {tweet.retweetFrom.displayName} Reposted</div>)}
         <Wrapper>
-          <div><Avatar src={tweet.author.avatarSrc}></Avatar></div>
+          <div><Avatar onClick={(e) => handleClick(e, `/${tweet.author.handle}`)} src={tweet.author.avatarSrc}></Avatar></div>
           <Content>
-            <ContentLink to={`/tweet/${tweet.id}`}>
-              <div>
-                <HandleDetails onClick={(event) => handleClick(event, tweet.author.handle)}>
-                  <SpanBold>{tweet.author.displayName}</SpanBold>
+            <div>
 
-                  <SpanHandler>{` @${tweet.author.handle}`}</SpanHandler>
-                </HandleDetails>
-                <SpanDate>{` - ${format(new Date(tweet.timestamp), 'MMM do')}`}</SpanDate>
-              </div>
-              <Status>{tweet.status}</Status>
-              {tweet.media.length > 0 && (<Image src={tweet.media[0].url}></Image>)}
-            </ContentLink>
+              <HandleDetails onClick={(e) => handleClick(e, `/${tweet.author.handle}`)}>
+                <SpanBold>{tweet.author.displayName}</SpanBold>
+                <SpanHandler>{` @${tweet.author.handle}`}</SpanHandler>
+              </HandleDetails>
+
+              <SpanDate>{` - ${format(new Date(tweet.timestamp), 'MMM do')}`}</SpanDate>
+            </div>
+
+            <Status>{tweet.status}</Status>
+
+            {tweet.media.length > 0 && (<Image src={tweet.media[0].url}></Image>)}
             <TweetActions retweets={tweet.numRetweets} likes={tweet.numLikes} />
           </Content>
         </Wrapper>
@@ -44,6 +47,9 @@ const Section = styled.section`
   background-color: ${COLORS.card};
   border-radius: 5px;
   padding: 40px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -51,9 +57,6 @@ const Wrapper = styled.div`
   display: flex;
   gap: 4vh;
   transition: all 200ms ease-in-out;
-  &:hover {
-    cursor: pointer;
-  }
 `;
 
 const Avatar = styled.img`
@@ -61,6 +64,10 @@ const Avatar = styled.img`
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
+  transition: all 200ms ease-in-out;
+  &:hover {
+    filter: brightness(60%);
+  }
 `;
 
 const Content = styled.div`
@@ -71,6 +78,10 @@ const Content = styled.div`
 const SpanBold = styled.span`
   font-weight: 600;
   font-size: 16px;
+  transition: all 200ms ease-in-out;
+  &:hover {
+    color: ${COLORS.primary_blue};
+  }
 `;
 
 const SpanHandler = styled.span`
@@ -82,10 +93,9 @@ const SpanHandler = styled.span`
 
 const SpanDate = styled.span`
   color: ${COLORS.primary_text};
-`;
-
-const ContentLink = styled(Link)`
-  text-decoration: none;
+  &:hover {
+    cursor: default;
+  }
 `;
 
 const HandleDetails = styled.div`
