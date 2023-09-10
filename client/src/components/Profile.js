@@ -19,16 +19,6 @@ export const Profile = () => {
   const scrollUpRef = useRef(null);
 
   useEffect(() => {
-    fetch(`/api/${profileId}/profile`)
-      .then(res => res.json())
-      .then(data => {
-        setHandle(data.profile);
-        scrollUpRef.current && scrollUpRef.current.scrollIntoView();
-      })
-      .catch(error => console.log(error))
-  }, [profileId]);
-
-  useEffect(() => {
     fetch(`/api/${profileId}/feed`)
       .then(res => res.json())
       .then(data => {
@@ -36,29 +26,38 @@ export const Profile = () => {
         setTweetsIds(data.tweetIds);
       })
       .catch(error => console.log(error))
+
+    fetch(`/api/${profileId}/profile`)
+      .then(res => res.json())
+      .then(data => {
+        setHandle(data.profile);
+        console.log(data.profile)
+        scrollUpRef.current && scrollUpRef.current.scrollIntoView();
+      })
+      .catch(error => console.log(error))
   }, [profileId]);
 
   return (
     !handle
       ? <Loading />
-      : <Wrapper ref={scrollUpRef}>
-        <Banner src={handle.bannerSrc}></Banner>
-        <Content>
+      : <Section ref={scrollUpRef}>
+        <BioSection>
+          <Banner src={handle.bannerSrc}></Banner>
 
-          <Heading>
+          <AvatarContainer>
             <Avatar src={handle.avatarSrc}></Avatar>
             {currentUser.currentuser.handle !== handle.handle &&
               <TagSpan>
                 <Tag>{handle.isBeingFollowedByYou ? "Following" : "Follow!"}</Tag>
                 <Tag>{handle.isFollowingYou ? 'Follows you' : "Does not follow you"}</Tag>
               </TagSpan>}
+          </AvatarContainer>
 
-          </Heading>
-
-
-          <HandleName>{handle.displayName}</HandleName>
-          {`@${handle.handle}`}
-          <Bio>{handle.bio}</Bio>
+          <BioContainer>
+            <HandleName>{handle.displayName}</HandleName>
+            {`@${handle.handle}`}
+            <Bio>{handle.bio}</Bio>
+          </BioContainer>
 
           <Placer>
             <div>{handle.location && (<><FiMapPin /> {handle.location}</>)}</div>
@@ -70,31 +69,58 @@ export const Profile = () => {
             <div><Bold>{handle.numFollowers}</Bold> Followers</div>
           </Placer>
 
-        </Content>
-        <Div>
           <Tabulate tab={tab} setTab={setTab} />
-          {tab === 'media' && (<FilterDiv>Media filter goes here</FilterDiv>)}
-          {tab === 'likes' && (<FilterDiv>Likes filter goes here</FilterDiv>)}
-          {tab === 'tweets' && (
-            allTweets && tweetsIds && (
-              tweetsIds.map((id) => {
-                return (
-                  <div key={id}>
-                    <TweetSmall tweet={allTweets[Object.keys(allTweets).find(tweet => tweet === id.toString())]} />
-                  </div>
-                )
-              })
-            )
-          )}
-        </Div>
-      </Wrapper>
+        </BioSection>
+        {tab === 'tweets' && (
+          allTweets && tweetsIds && (
+            tweetsIds.map((id) => {
+              return <TweetSmall key={id} tweet={allTweets[Object.keys(allTweets).find(tweet => tweet === id.toString())]} />
+            })
+          )
+        )}
+        {tab === 'media' && (
+          allTweets && tweetsIds && (
+            tweetsIds.map((id) => {
+              return allTweets[Object.keys(allTweets).find(tweet => tweet === id.toString())].media.length > 0
+                ? <TweetSmall key={id} tweet={allTweets[Object.keys(allTweets).find(tweet => tweet === id.toString())]} />
+                : null
+            })
+          )
+        )}
+        {tab === 'likes' && (
+          allTweets && tweetsIds && (
+            tweetsIds.map((id) => {
+              return (
+                <div key={id}>
+                  <TweetSmall tweet={allTweets[Object.keys(allTweets).find(tweet => tweet === id.toString())]} />
+                </div>
+              )
+            })
+          )
+        )}
+      </Section>
   )
 }
 
-const Wrapper = styled.div`
+const BioSection = styled.div`
+  background-color: ${COLORS.card};
+`;
+
+const AvatarContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 8vh;
+  align-items: flex-end;
+  margin-top: -100px;
+`;
+
+const BioContainer = styled.div`
+  padding: 4vh;
+`;
+
+const Section = styled.section`
   display: flex;
   flex-direction: column;
-  background-color: ${COLORS.card};
 `;
 
 const Banner = styled.img`
@@ -106,7 +132,7 @@ const Banner = styled.img`
 const TagSpan = styled.span`
   font-size: 14px;
   display: flex;
-  gap: 10px;
+  gap: 15px;
 `;
 
 const Tag = styled.div`
@@ -123,19 +149,10 @@ const HandleName = styled.div`
   color: ${COLORS.primary_text};
 `;
 
-const FilterDiv = styled.div`
-  text-align: center;
-  margin: 40px 0px 120px;
-`;
-
-const Div = styled.div`
-  position: relative;
-`;
-
 const Placer = styled.div`
-  padding-top: 20px;
+  padding: 0 0 2vh 4vh;
   display: flex;
-  gap: 20px;
+  gap: 4vh;
   color: gray;
 `;
 
@@ -148,18 +165,6 @@ const Bio = styled.p`
   color: ${COLORS.secondary_text};
   font-style: italic;
   line-height: 22px;
-`;
-
-const Content = styled.div`
-  padding: 0 60px;
-  position: relative;
-  top: -100px;
-`;
-
-const Heading = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
 `;
 
 const Avatar = styled.img`
