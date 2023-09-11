@@ -47,7 +47,7 @@ const getUserProfile = handle => {
 
   mutableUser.numFollowing = user.followingIds.length;
   mutableUser.numFollowers = user.followerIds.length;
-  mutableUser.numLikes = user.likeIds.length;
+  mutableUser.likesIds = user.likeIds;
   mutableUser.isFollowingYou = user.followingIds.includes(currentUser.handle);
   mutableUser.isBeingFollowedByYou = currentUser.followingIds.includes(
     user.handle
