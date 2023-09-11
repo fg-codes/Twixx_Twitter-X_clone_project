@@ -24,7 +24,7 @@ const users = {
     bio: "Nature lover and adventurer. 🌿🌄",
     followingIds: ["JohnDoe", "TechGuru123", "FitnessFanatic"],
     followerIds: ["JohnDoe", "TechGuru123", "TravelExplorer", "FoodieLover"],
-    likeIds: ["2577516047780438", "2577516047780438"],
+    likeIds: ["2577516047780438", "6449055778308144", "3341929402841045"],      
   },
 
   TechGuru123: {
@@ -107,7 +107,7 @@ const tweets = {
     authorHandle: "JohnDoe",
     timestamp: "2023-04-17T09:14:00+00:00",
     sortedTimestamp: "2023-04-17T09:14:00+00:00",
-    likedBy: [],
+    likedBy: ["AliceSmith"],
     retweetedBy: [],
     status:
       "I loved my time at the reader group meeting, and meeting Alexander Radulov was an unexpected delight. A perfect blend of literature and sports!",
