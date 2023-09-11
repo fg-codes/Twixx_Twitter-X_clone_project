@@ -10,7 +10,7 @@ export const Loading = () => {
 }
 
 export const LoadingSmall = () => {
-  return (<StyledBiLoader />)
+  return <StyledBiLoader />
 }
 const Wrapper = styled.div`
 text-align: center;
