@@ -98,6 +98,11 @@ const getTweetsFromUser = userId => {
     .map(denormalizeTweet);
 };
 
+const getLikes = userId => {
+  return Object.values(data.tweets)
+  .filter(tweet => tweet.likedBy.includes(userId))
+}
+
 const duplicateTweetReducer = (acc, tweet, index, allTweets) => {
   // If the user is following Profile A and Profile B, and Profile B
   // retweets the tweet of Profile A, we only want to show whichever
@@ -133,6 +138,7 @@ module.exports = {
   CURRENT_USER_HANDLE,
   simulateProblems,
   getUser,
+  getLikes,
   getUserProfile,
   resolveRetweet,
   denormalizeTweet,

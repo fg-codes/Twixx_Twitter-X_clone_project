@@ -8,6 +8,7 @@ const data = require('../data');
 
 const {
   CURRENT_USER_HANDLE,
+  getLikes,
   getUser,
   getUserProfile,
   getTweetsFromUser,
@@ -51,11 +52,14 @@ router.get('/api/:handle/feed', (req, res) => {
 
   const tweets = getTweetsFromUser(handle);
 
+  const likes = getLikes(handle);
+
   const { tweetsById, tweetIds } = formatTweetResponse(tweets);
 
   return res.json({
     tweetsById,
     tweetIds,
+    likes
   });
 });
 
