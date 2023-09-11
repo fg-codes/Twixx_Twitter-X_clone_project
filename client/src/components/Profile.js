@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { useParams } from "react-router-dom";
-import { useEffect, useRef, useState, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import { CurrentUserContext } from "./CurrentUserContext";
 import { COLORS } from "../GlobalStyles";
 import { FiMapPin, FiCalendar } from "react-icons/fi";
@@ -14,9 +14,9 @@ export const Profile = () => {
   const currentUser = useContext(CurrentUserContext)
   const [handle, setHandle] = useState(null);
   const [allTweets, setAllTweets] = useState(null);
+  const [allLikes, setAllLikes] = useState(null);
   const [tweetsIds, setTweetsIds] = useState(null);
   const [tab, setTab] = useState('tweets');
-  const scrollUpRef = useRef(null);
 
   useEffect(() => {
     fetch(`/api/${profileId}/feed`)
@@ -24,6 +24,7 @@ export const Profile = () => {
       .then(data => {
         setAllTweets(data.tweetsById);
         setTweetsIds(data.tweetIds);
+        setAllLikes(data.likes);
       })
       .catch(error => console.log(error))
 
@@ -31,16 +32,21 @@ export const Profile = () => {
       .then(res => res.json())
       .then(data => {
         setHandle(data.profile);
-        console.log(data.profile)
-        scrollUpRef.current && scrollUpRef.current.scrollIntoView();
+        window.scrollTo(0, 0);
       })
       .catch(error => console.log(error))
+    return () => {
+      setTab('tweets');
+      setHandle(null);
+      setAllTweets(null);
+      setAllLikes(null);
+    }
   }, [profileId]);
 
   return (
     !handle
       ? <Loading />
-      : <Section ref={scrollUpRef}>
+      : <Section>
         <BioSection>
           <Banner src={handle.bannerSrc}></Banner>
 
@@ -88,13 +94,9 @@ export const Profile = () => {
           )
         )}
         {tab === 'likes' && (
-          allTweets && tweetsIds && (
-            tweetsIds.map((id) => {
-              return (
-                <div key={id}>
-                  <TweetSmall tweet={allTweets[Object.keys(allTweets).find(tweet => tweet === id.toString())]} />
-                </div>
-              )
+          allLikes && (
+            allLikes.map((tweet) => {
+              return <TweetSmall key={tweet.id} tweet={tweet} />
             })
           )
         )}
