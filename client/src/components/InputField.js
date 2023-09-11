@@ -92,7 +92,11 @@ const Textarea = styled.textarea`
 `;
 
 const Button = styled.button`
-  padding: 5px 30px;
+  height: 35px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 16px;
   border: none;
   outline: none;
