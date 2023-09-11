@@ -2,25 +2,27 @@
 
 ## 🟢 About
 
-The main goal behind this project was to enhance my front-end skills by creating an X (Twitter) clone using React. I worked on this project independently, focusing on designing and building the user interface inspired by the X-Twitter UX. I took on the challenge of developing the frontend to match an already working backend. My mission was to design the user interface and make sure it worked smoothly with the existing backend system.
+The main goal behind this project was to enhance my front-end skills by creating an X (Twitter) clone using React. I worked on this project independently, focusing on designing and building the user interface inspired by the X-Twitter UX. I took on the challenge of developing the frontend to match an already working backend. My mission was to design the user interface and make sure it worked smoothly with the existing backend system. 
 
-<!-- ![mvp demo](./mvp.png) -->
+I created the database myself, and I had to tweak the backend my way to add some features such as Likes and Media tabs filters.
+
+![mvp demo](./mvp.png)
 
 ## 🟢 Features
 
-<!-- - DOM manipulation after state changes (true, false or null).
-- Store orders locally and make them accessible at /order/:orderId.
-- Secret /admin page to view, update, or delete orders.
-- The order form for modification is pre-filled with the stored data. -->
+- Tweet Posting: Users can compose and post tweets, including character limits and real-time updates.
+- Timeline and Feeds: User's personalized timeline including tweets from people they follow and relevant trending topics.
+- User Profiles: Profile pictures, bio, and the ability to filter by Tweets, Media or Liked tweets.
+- Users can interact with tweets by liking, retweeting, and viewing tweet engagement statistics
 
 ## 🟢 Demo
-<!-- ![demo1](./demo1.gif)
+![demo1](./demo1.gif)
 \
 ![demo2](./demo2.gif)
 \
 ![demo3](./demo3.gif)
 \
-![demo4](./demo4.gif) -->
+![demo4](./demo4.gif)
 
 
 ## 🟢 Project Setup
