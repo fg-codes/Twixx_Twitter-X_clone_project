@@ -16,14 +16,7 @@ I created the database myself, and I had to tweak the backend my way to add some
 - Users can interact with tweets by liking, retweeting, and viewing tweet engagement statistics
 
 ## 🟢 Demo
-![demo1](./demo1.gif)
-\
-![demo2](./demo2.gif)
-\
-![demo3](./demo3.gif)
-\
-![demo4](./demo4.gif)
-
+https://github.com/fg-codes/Twixx_Twitter-X_clone_project/assets/114963609/93ee51f6-1387-4ce7-bbb9-df1b29b8021a
 
 ## 🟢 Project Setup
 #### Server side: 
