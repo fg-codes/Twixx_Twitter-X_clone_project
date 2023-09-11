@@ -7,7 +7,9 @@ export const TweetActions = ({ retweets, likes }) => {
   const [isLiked, setIsLiked] = useState(false);
   const [total, setTotal] = useState(likes)
 
-  const handleCounter = () => {
+  const handleCounter = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     isLiked && setTotal(prev => prev - 1)
     !isLiked && setTotal(prev => prev + 1)
     setIsLiked(!isLiked)
@@ -20,7 +22,7 @@ export const TweetActions = ({ retweets, likes }) => {
         <FiRepeat />
         {retweets > 0 && <Span>{retweets}</Span>}
       </Div>
-      <Div onClick={() => handleCounter()}>
+      <Div onClick={handleCounter}>
         <StyledFiHeart isliked={isLiked ? 'red' : ''} />
         {total > 0 && <Span>{total}</Span>}
       </Div>
