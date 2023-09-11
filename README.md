@@ -8,6 +8,8 @@ I created the database myself, and I had to tweak the backend my way to add some
 
 ![mvp demo](./mvp.png)
 
+<br>
+
 ## 🟢 Features
 
 - Tweet Posting: Users can compose and post tweets, including character limits and real-time updates.
@@ -15,8 +17,12 @@ I created the database myself, and I had to tweak the backend my way to add some
 - User Profiles: Profile pictures, bio, and the ability to filter by Tweets, Media or Liked tweets.
 - Users can interact with tweets by liking, retweeting, and viewing tweet engagement statistics
 
+<br>
+
 ## 🟢 Demo
 https://github.com/fg-codes/Twixx_Twitter-X_clone_project/assets/114963609/93ee51f6-1387-4ce7-bbb9-df1b29b8021a
+
+<br>
 
 ## 🟢 Project Setup
 #### Server side: 
