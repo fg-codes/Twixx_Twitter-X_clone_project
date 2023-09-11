@@ -101,6 +101,8 @@ const getTweetsFromUser = userId => {
 const getLikes = userId => {
   return Object.values(data.tweets)
   .filter(tweet => tweet.likedBy.includes(userId))
+  .map(resolveRetweet)
+  .map(denormalizeTweet);
 }
 
 const duplicateTweetReducer = (acc, tweet, index, allTweets) => {
