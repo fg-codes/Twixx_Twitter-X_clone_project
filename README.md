@@ -1,5 +1,7 @@
 # ⚡ TWIXX (Twitter-X clone project)
 
+<br>
+
 ## 🟢 About
 
 The main goal behind this project was to enhance my front-end skills by creating an X (Twitter) clone using React. I worked on this project independently, focusing on designing and building the user interface inspired by the X-Twitter UX. I took on the challenge of developing the frontend to match an already working backend. My mission was to design the user interface and make sure it worked smoothly with the existing backend system. 
