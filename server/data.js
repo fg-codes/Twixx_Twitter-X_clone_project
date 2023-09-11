@@ -10,7 +10,7 @@ const users = {
     bio: "Aspiring writer with a passion for technology. 📚🖥️ Exploring the fusion of storytelling and tech's endless possibilities.",
     followingIds: ["AliceSmith", "TechGuru123", "FoodieLover", "TravelExplorer", "FitnessFanatic"],
     followerIds: ["AliceSmith", "FoodieLover"],
-    likeIds: ["1212689921057665024"],
+    likeIds: ["1215324598067245", "6710219229755186", "0574698479845977"],
   },
 
   AliceSmith: {
@@ -24,7 +24,7 @@ const users = {
     bio: "Nature lover and adventurer. 🌿🌄",
     followingIds: ["JohnDoe", "TechGuru123", "FitnessFanatic"],
     followerIds: ["JohnDoe", "TechGuru123", "TravelExplorer", "FoodieLover"],
-    likeIds: ["1209791721099411456"],
+    likeIds: ["2577516047780438", "2577516047780438"],
   },
 
   TechGuru123: {
@@ -38,7 +38,7 @@ const users = {
     bio: "Sharing the latest in tech trends and gadgets. 💻📱",
     followingIds: ["AliceSmith", "FoodieLover", "TravelExplorer", "FitnessFanatic"],
     followerIds: ["JohnDoe", "AliceSmith"],
-    likeIds: [],
+    likeIds: ["9325965937879404", "3911391382148489", "6661005865559667", "2577516047780438"],
   },
 
   FoodieLover: {
@@ -66,7 +66,7 @@ const users = {
     bio: "Roaming the globe and sharing travel tales. 🌍✈️",
     followingIds: ["AliceSmith", "FoodieLover", "FitnessFanatic"],
     followerIds: ["JohnDoe", "TechGuru123", "FoodieLover", "FitnessFanatic"],
-    likeIds: [],
+    likeIds: ["3911391382148489", "0574698479845977"],
   },
 
   FitnessFanatic: {
@@ -91,7 +91,7 @@ const tweets = {
     authorHandle: "JohnDoe",
     timestamp: "2023-02-10T09:14:00+00:00",
     sortedTimestamp: "2023-02-10T09:14:00+00:00",
-    likedBy: ["FoodieLover"],
+    likedBy: ["TechGuru123", "FoodieLover"],
     retweetedBy: [],
     status:
       "C.S. Lewis's Chronicles of Narnia whisked me away to a magical world, filled with unforgettable adventures and cherished characters.It was an enchanting reading journey that I'll always hold close to my heart. 📚✨ #NarniaMagic",
@@ -192,7 +192,7 @@ const tweets = {
     authorHandle: "FoodieLover",
     timestamp: "2023-04-21T09:14:00+00:00",
     sortedTimestamp: "2023-04-21T09:14:00+00:00",
-    likedBy: [],
+    likedBy: ["JohnDoe", "TravelExplorer"],
     retweetedBy: [],
     status:
       "Yet so simple but sooo yummy!!",
@@ -253,7 +253,7 @@ const tweets = {
     authorHandle: "FitnessFanatic",
     timestamp: "2023-02-22T09:14:00+00:00",
     sortedTimestamp: "2023-02-22T09:14:00+00:00",
-    likedBy: [],
+    likedBy: ["AliceSmith"],
     retweetedBy: [],
     status:
       "My buddy Correy is in the zone, heating up for his CrossFit competition. 🔥💪 Let's see him crush those goals!",
